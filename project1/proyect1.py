@@ -50,18 +50,18 @@ def draw_tile():
 
     # Array of colors to paing the tile
     colors_to_use = [
-                    (0.0, 1.0, 1.0), 
-                    (1.0, 1.0, 0.0), 
-                    (1.0, 0.5, 0.0),
-                    (0.0, 0.0, 1.0),
-                    (1.0, 1.0, 0.0),
-                    (0.0, 1.0, 0.0),
-                    (0.0, 0.0, 1.0),
-                    (1.0, 1.0, 0.0),
-                    (0.0, 1.0, 0.0),
-                    (0.0, 1.0, 1.0), 
-                    (1.0, 1.0, 0.0), 
-                    (1.0, 0.5, 0.0),
+                    (0.8117647058823529, 0.803921568627451, 0.5254901960784314),
+                    (0.0, 0.00784313725490196, 0.03529411764705882),
+                    (0.8980392156862745, 0.8862745098039215, 0.7333333333333333),
+                    (0.49411764705882355, 0.050980392156862744, 0.08627450980392157),
+                    (0.8980392156862745, 0.8862745098039215, 0.7333333333333333),
+                    (0.0, 0.00784313725490196, 0.03529411764705882),
+                    (0.4980392156862745, 0.5058823529411764, 0.40784313725490196),
+                    (0.49411764705882355, 0.050980392156862744, 0.08627450980392157),
+                    (0.8705882352941177, 0.42745098039215684, 0.2823529411764706),
+                    (0.8980392156862745, 0.8862745098039215, 0.7333333333333333),
+                    (0.9294117647058824, 0.8862745098039215, 0.7647058823529411),
+                    (0.0, 0.00784313725490196, 0.03529411764705882),
                     ]
 
     # Array of squares to draw
@@ -120,7 +120,7 @@ def keyboard(key, x, y):
     # Counter clockwise rotation: activated with lowercase 'r'
     if ord(key) == 114:# lowercase 'r'
         rotate_by_key += 10 
-        print("rotate! :" + str(rotate_by_key))
+        #print("rotate! :" + str(rotate_by_key))
         return
 
     # Clockwise rotation: activated with lowercase 'u'
@@ -134,8 +134,8 @@ def keyboard(key, x, y):
         pivot_x += 10
         pivot_y += 10
         glTranslatef(pivot_x, pivot_y, 0.0)
-        print("x: " +str(pivot_x))
-        print("y:" + str(pivot_y))
+        #print("x: " +str(pivot_x))
+        #print("y:" + str(pivot_y))
         draw_tile()
         glPopMatrix()
         return
@@ -146,8 +146,8 @@ def keyboard(key, x, y):
         pivot_x -= 10
         pivot_y -= 10
         glTranslatef(pivot_x, pivot_y, 0.0)
-        print("x: " +str(pivot_x))
-        print("y:" + str(pivot_y))
+        #print("x: " +str(pivot_x))
+        #print("y:" + str(pivot_y))
         draw_tile()
         glPopMatrix()
         return
@@ -162,7 +162,7 @@ def keyboard(key, x, y):
     
     # Scale the image (smaller)
     if ord(key) == 101:
-        print(scale)
+        #print(scale)
         if scale <= 1:
             scale = scale/2
         else:
